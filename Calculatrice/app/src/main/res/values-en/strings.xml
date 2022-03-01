@@ -7,5 +7,10 @@
     <string name ="Erreur_res">Wrong Answer</string>
     <string name="Score">\"Score : \"</string>
     <string name="nettoyer">Clean</string>
+    <string name="facile">Easy</string>
+    <string name="moyen">Medium</string>
+    <string name="difficile">Hard</string>
+    <string name="asiatique">Asian</string>
+    <string name="selectioner_votre_dificult">Select our dificulty</string>
 
 </resources>

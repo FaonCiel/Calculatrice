@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calculatrice.R;
-
+import com.example.calculatrice.view.Difficulty;
 import java.util.Random;
 
 public class Calcul_activity extends AppCompatActivity {
@@ -25,6 +25,7 @@ public class Calcul_activity extends AppCompatActivity {
     private Integer saisieUtilisateur = 0;
     private Integer Score =0;
     private TextView textViewScore;
+    private boolean Negatif = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +55,12 @@ public class Calcul_activity extends AppCompatActivity {
         Button bouton0 = findViewById(R.id.bouton_0);
         bouton0.setOnClickListener(view -> ajouteValeur(0));
         Button Valider = findViewById(R.id.Valider);
+
+        new Difficulty().getDifficulty();
+
         Valider.setOnClickListener(view -> Verif());
         Button moins = findViewById(R.id.Moins);
-        moins.setOnClickListener(view -> Negatif());
-
+        moins.setOnClickListener(view -> estNegatif());
         New_Calcul();
 
     }
@@ -73,10 +76,9 @@ public class Calcul_activity extends AppCompatActivity {
    {
        textViewSaisieUtilisateur.setText("");
        saisieUtilisateur =0;
+       Negatif = false;
        return true;
    }
-
-
 
 
     private void New_Calcul()
@@ -118,20 +120,19 @@ public class Calcul_activity extends AppCompatActivity {
         textViewScore.setText(getString(R.string.Score) +Score);
     }
     private void ajouteValeur(int Nb) {
-        if (saisieUtilisateur >= 0) {
+        if (!Negatif) {
             saisieUtilisateur = saisieUtilisateur * 10 + Nb;
             majTextViewUser(saisieUtilisateur.toString());
         }
         else
-        {
-            saisieUtilisateur = saisieUtilisateur * 10 - Nb;
+        { saisieUtilisateur = saisieUtilisateur * 10 - Nb;
         majTextViewUser(saisieUtilisateur.toString());
         }
     }
-    private void Negatif()
+    private void estNegatif()
     {
-        saisieUtilisateur=saisieUtilisateur*-1;
-        majTextViewUser(saisieUtilisateur.toString());
+        Negatif = true;
+        saisieUtilisateur= saisieUtilisateur*-1;
     }
 
     private boolean calculResultat() {
@@ -181,9 +182,12 @@ public class Calcul_activity extends AppCompatActivity {
             New_Calcul();
             UpdateScore();
             saisieUtilisateur =0;
+            Negatif = false;
         }
         else
             Toast.makeText(this,getString(R.string.Erreur_res),Toast.LENGTH_LONG).show();
+        saisieUtilisateur =0;
+        majTextViewUser("");
     }
 }
 

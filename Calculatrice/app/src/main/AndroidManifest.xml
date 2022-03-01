@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculatrice">
         <activity
+            android:name=".view.Dificulty"
+            android:exported="false" />
+        <activity
             android:name=".view.Scoreboard"
             android:exported="false" />
         <activity
