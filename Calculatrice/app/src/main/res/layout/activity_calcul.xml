@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="CalculActivity">
+    tools:context=".view.Calcul_activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,7 +12,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/Opération"
+            android:id="@+id/TextView_Score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/TextViewCalcul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
@@ -43,49 +50,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/computeTitle">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/addButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_weight="1"
-                        android:text="@string/button_plus" />
-
-                    <Button
-                        android:id="@+id/susbstractButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_weight="1"
-                        android:text="@string/button_substract" />
-
-
-                    <Button
-                        android:id="@+id/multiplyButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_weight="1"
-                        android:text="@string/button_multiply" />
-
-
-                    <Button
-                        android:id="@+id/diviseButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="3dp"
-                        android:layout_weight="1"
-                        android:text="/" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -194,10 +158,21 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <Space
+                    <Button
+                        android:id="@+id/PointButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:text="@string/point" />
+
+                    <Button
+                        android:id="@+id/Moins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:text="@string/moins" />
 
                     <Button
                         android:id="@+id/bouton_0"
@@ -207,10 +182,13 @@
                         android:layout_weight="1"
                         android:text="@string/button_0" />
 
-                    <Space
+                    <Button
+                        android:id="@+id/Valider"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_margin="3dp"
+                        android:layout_weight="1"
+                        android:text="@string/valider" />
 
                 </LinearLayout>
             </LinearLayout>

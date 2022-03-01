@@ -1,10 +1,13 @@
-package com.example.calculatrice;
+package com.example.calculatrice.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.calculatrice.R;
+import com.example.calculatrice.view.Calcul_activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void lanceActiviteCalculer() {
-        Intent i = new Intent(this, CalculActivity.class);
+        Intent i = new Intent(this, Calcul_activity.class);
         startActivity(i);
     }
 }

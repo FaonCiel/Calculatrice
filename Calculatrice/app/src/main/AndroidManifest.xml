@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculatrice">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.Scoreboard"
+            android:exported="false" />
+        <activity
+            android:name=".view.Calcul_activity"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

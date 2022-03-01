@@ -16,6 +16,12 @@
     <string name="button_0" translatable="false">0</string>
     <string name="calcul_mental">Calcul Mental</string>
     <string name="score">score</string>
+    <string name="valider">Valider</string>
+    <string name ="Erreur_res">Erreur Résultat</string>
+    <string name="point" translatable="false">.</string>
+    <string name="Score">\"Score : \"</string>
+    <string name="moins" translatable="false">-</string>
+    <string name="nettoyer">Nettoyer</string>
 
 
 </resources>
