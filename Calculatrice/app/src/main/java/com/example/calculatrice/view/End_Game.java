@@ -1,4 +1,4 @@
-package com.example.calculatrice;
+package com.example.calculatrice.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.calculatrice.R;
 import com.example.calculatrice.database.ScoreBaseHelper;
 import com.example.calculatrice.database.ScoreDao;
 import com.example.calculatrice.entity.Score;
@@ -55,7 +56,7 @@ public class End_Game extends AppCompatActivity {
 
         finish();
 
-        //Toast.makeText(this,text,Toast.LENGTH_SHORT).show();
+
     }
 
 

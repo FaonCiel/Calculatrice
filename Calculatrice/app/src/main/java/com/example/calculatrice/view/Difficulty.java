@@ -2,6 +2,7 @@ package com.example.calculatrice.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -9,32 +10,28 @@ import com.example.calculatrice.R;
 
 public class Difficulty extends AppCompatActivity {
 
-
-
-    private int difficulty =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty);
         Button easy = findViewById(R.id.button_easy);
-        easy.setOnClickListener(view -> setdifficulty(0));
+        easy.setOnClickListener(view -> lanceCalcul(0));
 
         Button medium = findViewById(R.id.button_medium);
-        medium.setOnClickListener(view -> setdifficulty(1));
+        medium.setOnClickListener(view -> lanceCalcul(1));
 
         Button hard = findViewById(R.id.button_hard);
-        hard.setOnClickListener(view -> setdifficulty(2));
+        hard.setOnClickListener(view -> lanceCalcul(2));
 
         Button asian = findViewById(R.id.button_Asian);
-        asian.setOnClickListener(view -> setdifficulty(3));
+        asian.setOnClickListener(view -> lanceCalcul(3));
 
     }
 
-    private void setdifficulty(int nb){
+    private void lanceCalcul(int nb){
+        Intent i = new Intent(this, End_Game.class);
+        i.putExtra("idDif",nb);
+    }
 
-            difficulty = nb;
-    }
-    public int getDifficulty() {
-        return difficulty;
-    }
+
 }

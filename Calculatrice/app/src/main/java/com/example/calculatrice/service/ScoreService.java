@@ -18,7 +18,7 @@ public class ScoreService {
    }
 
   public List<Score> getScore(){
-        return  scoreDao.query();
+        return scoreDao.query();
   }
 
 }

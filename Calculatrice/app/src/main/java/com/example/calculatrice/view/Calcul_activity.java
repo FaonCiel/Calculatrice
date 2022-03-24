@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.calculatrice.End_Game;
 import com.example.calculatrice.R;
 
 import java.util.Random;
@@ -61,7 +60,7 @@ public class Calcul_activity extends AppCompatActivity {
         bouton0.setOnClickListener(view -> ajouteValeur(0));
         Button Valider = findViewById(R.id.Valider);
 
-        new Difficulty().getDifficulty();
+
 
         Valider.setOnClickListener(view -> Verif());
         Button moins = findViewById(R.id.Moins);

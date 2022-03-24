@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".End_Game">
+    tools:context=".view.End_Game">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,8 @@
                 android:id="@+id/TextInputPseudo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="hint" />
+                android:hint="hint"
+                android:maxLength="15" />
 
         </com.google.android.material.textfield.TextInputLayout>
 

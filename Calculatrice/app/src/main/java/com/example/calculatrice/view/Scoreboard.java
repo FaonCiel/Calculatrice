@@ -16,16 +16,41 @@ import java.util.List;
 
 public class Scoreboard extends AppCompatActivity {
     List<Score> ListScore;
+    TextView[] TextViewList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
-        TextView textViewScore = findViewById(R.id.ScoreTextView);
+        TextViewList = new TextView[10];
+
+        TextViewList[0] = findViewById(R.id.ScoreTextView);
+        TextViewList[1] = findViewById(R.id.ScoreTextView1);
+        TextViewList[2] = findViewById(R.id.ScoreTextView2);
+        TextViewList[3] = findViewById(R.id.ScoreTextView3);
+        TextViewList[4] = findViewById(R.id.ScoreTextView4);
+        TextViewList[5] = findViewById(R.id.ScoreTextView5);
+        TextViewList[6] = findViewById(R.id.ScoreTextView6);
+        TextViewList[7] = findViewById(R.id.ScoreTextView7);
+        TextViewList[8] = findViewById(R.id.ScoreTextView8);
+        TextViewList[9] = findViewById(R.id.ScoreTextView9);
 
         ScoreService Score = new ScoreService(new ScoreDao(new ScoreBaseHelper(this)));
         ListScore = Score.getScore();
-        textViewScore.setText(ListScore.get(0).toString());
+
+        int i;
+        for (i = 0; i < ListScore.size(); i++) {
+            TextViewList[i].setText(ListScore.get(i).toString());
+            if (i == 10) {
+                break;
+            }
+        }
+        if (i < 10) {
+            for (int j = i; j < 10; j++) {
+                TextViewList[j].setText(" ");
+            }
+        }
+
+
     }
-
-
 }

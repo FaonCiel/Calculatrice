@@ -15,7 +15,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".End_Game"
+            android:name=".view.End_Game"
             android:exported="false" />
 
         <activity
