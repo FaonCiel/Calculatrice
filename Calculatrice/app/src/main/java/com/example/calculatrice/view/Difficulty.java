@@ -15,7 +15,7 @@ public class Difficulty extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dificulty);
+        setContentView(R.layout.activity_difficulty);
         Button easy = findViewById(R.id.button_easy);
         easy.setOnClickListener(view -> setdifficulty(0));
 

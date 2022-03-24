@@ -23,7 +23,7 @@
             android:text="@string/calcul_mental" />
 
         <Button
-            android:id="@+id/TextView_Score"
+            android:id="@+id/Button_Score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/score" />
