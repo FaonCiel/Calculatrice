@@ -61,14 +61,23 @@ public class Calcul_activity extends AppCompatActivity {
         Button Valider = findViewById(R.id.Valider);
 
 
-
         Valider.setOnClickListener(view -> Verif());
         Button moins = findViewById(R.id.Moins);
         moins.setOnClickListener(view -> estNegatif());
-        New_Calcul();
+        New_Calcul(RecupDificulty());
 
     }
 
+    public int RecupDificulty() {
+        int mealId = 0;
+        Intent intent = getIntent();
+
+        Bundle bundle = intent.getExtras();
+        if(bundle != null){
+            mealId = bundle.getInt("difficulte");
+        }
+        return mealId;
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -86,9 +95,30 @@ public class Calcul_activity extends AppCompatActivity {
     }
 
 
-    private void New_Calcul() {
-        premierElement = getRandomNumber(1, 100);
-        deuxiemeElement = getRandomNumber(1, 100);
+    private void New_Calcul(int difficulty) {
+
+            if (difficulty == 1) {
+            premierElement = getRandomNumber(1, 10);
+            deuxiemeElement = getRandomNumber(1, 10);
+            }
+            else if (difficulty == 2) {
+            premierElement = getRandomNumber(10, 20);
+            deuxiemeElement = getRandomNumber(10, 20);
+            }
+            else if (difficulty == 3) {
+            premierElement = getRandomNumber(20, 50);
+            deuxiemeElement = getRandomNumber(20, 50);
+            }
+            else if (difficulty == 4) {
+                premierElement = getRandomNumber(100, 1000);
+                deuxiemeElement = getRandomNumber(100, 1000);
+            }
+            else {
+                premierElement = getRandomNumber(1, 1);
+                deuxiemeElement = getRandomNumber(1, 1);
+            }
+
+
         typeOperation = randomSymbol(TypeOperationEnum.class);
         textViewSaisieUtilisateur.setText("");
         textViewScore.setText(getString(R.string.Score));
@@ -188,15 +218,16 @@ public class Calcul_activity extends AppCompatActivity {
             */
         }
         if (Resultat == (double) saisieUtilisateur) {
-            New_Calcul();
+            New_Calcul(RecupDificulty());
             UpdateScore();
             saisieUtilisateur = 0;
             Negatif = false;
         } else {
-                if (Vie <= 0) {
+                if (Vie <= 1) {
 
                     Intent i = new Intent(this, End_Game.class);
-                    i.putExtra("Score",Score);
+                    i.putExtra("Score",Score*RecupDificulty());
+
                     startActivity(i);
                     finish();
 

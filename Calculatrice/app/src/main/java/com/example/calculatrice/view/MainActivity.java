@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button boutonCalculer = findViewById(R.id.bouton_calculer);
         Button boutonScore = findViewById(R.id.Button_Score);
-        boutonCalculer.setOnClickListener(view -> lanceActiviteCalculer());
+        boutonCalculer.setOnClickListener(view -> lanceactiviteDifficulty());
         boutonScore.setOnClickListener(view -> lanceScore() );
 
     }
-    private void lanceActiviteCalculer() {
-        Intent i = new Intent(this, Calcul_activity.class);
-        startActivity(i);
+   private void lanceactiviteDifficulty(){
+        Intent intent = new Intent(this, Difficulty.class);
+        startActivity(intent);
     }
 
     private void lanceScore() {

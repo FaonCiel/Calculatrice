@@ -30,9 +30,7 @@ public class End_Game extends AppCompatActivity {
         Score = findViewById(R.id.Score);
         RecupScore();
         Button Sauvegarder = findViewById(R.id.Sauvegarder);
-
         Sauvegarder.setOnClickListener(view -> Valider());
-
     }
 
     public int RecupScore() {
