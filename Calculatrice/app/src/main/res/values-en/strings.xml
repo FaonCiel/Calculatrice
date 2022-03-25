@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="calcul_mental">Calcul Mental</string>
+    <string name="calcul_mental">Mental Calculation</string>
     <string name="score">scoreboard</string>
     <string name="valider">Valider</string>
     <string name ="Erreur_res">Wrong Answer</string>
@@ -11,7 +11,7 @@
     <string name="moyen">Medium</string>
     <string name="difficile">Hard</string>
     <string name="asiatique">Asian</string>
-    <string name="selectioner_votre_dificult">Select our dificulty</string>
+    <string name="selectioner_votre_dificult">Select your difficulty</string>
     <string name="Vie">\"Vie \"</string>
 
 </resources>
